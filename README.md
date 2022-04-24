@@ -1,2 +1,2 @@
 # SnrJS
-Snr Js Custom Framework
+Snr Js is a Custom Framework from Soner Acar for now.

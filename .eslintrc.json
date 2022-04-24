@@ -1,0 +1,15 @@
+{
+  "ignorePatterns": [".min.js", "/bower_components/*.js", "/node_modules/*.js"],
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "es6": true
+  },
+  "rules": {
+    "eqeqeq": "off",
+    "curly": "error",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single", { "avoidEscape": true }]
+  }
+}

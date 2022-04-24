@@ -1,0 +1,19 @@
+{
+  "name": "SNRjs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sooneer/SNRjs",
+  "authors": [
+    "sooneer"
+  ],
+  "description": "SNRjs is a custom JS Framework",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "overrides": {}
+}

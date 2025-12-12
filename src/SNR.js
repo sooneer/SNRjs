@@ -2,6 +2,7 @@
     'use strict';
 
     var SNR = {
+        Model: {},
         Element: function(selector) {
             if (typeof selector !== 'string') {
                 console.log('Seçici string olmalıdır.');
@@ -58,15 +59,15 @@
         Bind: function() {
 
             var elements = document.querySelectorAll('[s-model]');
-            window.scope = {};
+            this.Model = {};
 
             elements.forEach(function(element) {
 
 
                 function addScopeProp(prop) {
-                    if (!scope.hasOwnProperty(prop)) {
+                    if (!SNR.Model.hasOwnProperty(prop)) {
                         var value;
-                        Object.defineProperty(scope, prop, {
+                        Object.defineProperty(SNR.Model, prop, {
                             set: function(newValue) {
                                 value = newValue;
                                 elements.forEach(function(element) {
@@ -94,7 +95,7 @@
                     var propToBind = element.getAttribute('s-model');
                     addScopeProp(propToBind);
                     element.onkeyup = function() {
-                        scope[propToBind] = element.value;
+                      SNR.Model[propToBind] = element.value;
                     };
                 };
 
@@ -232,9 +233,7 @@
         }
     };
 
-    SNR.Init();
+    window.SNR = SNR;
+    window.SNR.Init();
 
-    // SNR.Router.add('about', '/view/about.html', function() {
-    //     console.log('about');
-    // }).listen();
 })();

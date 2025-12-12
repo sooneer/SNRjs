@@ -5,10 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample File</title>
-    
+
 </head>
 <body>
     <div id="test"></div>
-    <script src="../dist/SNR.min.js"></script>
+    <input type="text" s-model="soner" />
+    <div s-content=""></div>
+    <script type="module" src="../src/SNR.js"></script>
+
+    <script type="module">
+      SNR.Text('#test','test');
+      SNR.Model.soner = 'test';
+      console.log(SNR.Model);
+
+      SNR.Router.add('about', 'view/about.html', function() {
+        console.log('about');
+    }).listen();
+
+    SNR.Router.navigate('/about');
+    console.log(SNR);
+    </script>
 </body>
 </html>
